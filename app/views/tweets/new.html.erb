@@ -1,0 +1,14 @@
+<% if @Tweet.errors.present? %>
+<h3>エラーがあります。</h3>
+<ul>
+     <% @Tweet.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+     <% end %>
+</ul>
+<% end %>
+
+<%= form_for @Tweet,url:{action: :create} do |f| %>
+<%= f.label :message, 'ツイート内容' %>
+<%= f.text_field :message %>
+<%= f.submit'登録'%>
+<% end %>
