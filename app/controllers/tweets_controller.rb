@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
   def index
     @Tweets = Tweet.all
+    
   end
   
   def new
@@ -37,3 +38,4 @@ class TweetsController < ApplicationController
     redirect_to '/'
   end
 end
+

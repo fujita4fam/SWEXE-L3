@@ -1,12 +1,21 @@
+
 <% @Tweets.each do |tweet| %>
-<p><%= tweet.message %>
+<p><img src="ユニコーン.png"alt="ガンダム" width="50" height="50">
+   藤田諒　
+   <font color="#BBBBBB">@fujiryo1256
    <% unix_t = tweet.tdate.to_i %>
    <% diff = Time.current.to_i - unix_t %>
    <% diff = diff / 60 %>
    <%= "#{diff}分経過" %>
+   </font>
+   </p>
+   <p>
+   <%= tweet.message %>
+   
    <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
    <%= link_to '表示', "/tweets/#{tweet.id}" %>
    <%= link_to '編集', "/tweets/#{tweet.id}/edit" %>
-</p>
+   </p>
+   <hr>
 <% end %>
-<p><%= link_to'新規追加','/tweets/new' %></p>
+<p><%= link_to'新規追加', "tweets/new" %></p>
